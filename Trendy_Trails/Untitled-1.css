@@ -1,0 +1,253 @@
+/* ... existing CSS ... */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+body {
+    background-color: rgb(21, 20, 16);
+    color: whitesmoke;
+    font-family: "Oswald";
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex;
+    flex-wrap: wrap;
+}
+a{
+    color: rgb(21, 20, 16);
+    bottom: 20px;
+}
+
+.logo {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.menu-bar {
+    position: fixed; /* Fix the menu bar */
+    top: 10px;
+    left: 10px;
+    padding: 20px;
+    cursor: pointer; /* Change cursor to pointer on hover */    
+    z-index: 2; /* Ensure menu is above other elements */
+    width: 30px; /* Initial width */
+    overflow: hidden; /* Hide overflow content */
+    transition: width 0.4s ease-in; /* Add transition effect for width */
+}
+
+.menu-bar.open {
+    width: 200px; /* Expanded width */
+}
+
+.menu-bar div {
+    width: 30px;
+    height: 4px;
+    background-color: rgb(125, 124, 121);
+    margin: 6px 0; /* Space between each line */
+}
+
+.menu-options {
+    display: none; /* Hide the menu options by default */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 130px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 1; /* Ensure menu options are above other elements */
+    overflow: hidden;
+    transition: display 0.4s ease-in; /* Add transition effect for display */
+}
+
+.menu-options ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-options ul li {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.menu-options ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    display: block;
+}
+
+.menu-options ul li:hover {
+    background-color: rgb(125, 124, 121);
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.menu-options ul li a:hover {
+    background-color: rgb(125, 124, 121);
+    border-radius: 5px;
+}
+
+/* Show menu options when menu is open */
+.menu-open .menu-options {
+    display: block;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(21, 20, 16);
+    width: 120px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #708090;
+    width: 100px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropbtn {
+    width: 100px;
+}
+
+.product-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Adjust padding to account for the menu bar height */
+    color: black;
+    margin: 90px;
+    padding-top: 20px;
+}
+
+.product-card {
+    width: 300px;
+    height: 460px;
+    color: whitesmoke;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(201, 194, 194, 0.1);
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(125, 124, 121);
+    font-size: larger;
+    border-radius: 10px;
+    transition: transform 0.4s ease-out; /* Add transition effect for transform */
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Search bar styling */
+.search-bar {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    height: 60px;
+    width: auto;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(21, 20, 16);
+    color: rgb(125, 124, 121);
+    outline: none;
+    height: 26px;
+    width: 11vh;
+    font-family: "Oswald";
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: rgb(125, 124, 121);
+    margin-left: 5px;
+    font-family: 'Oswald';
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(125, 124, 121);
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    font-family: 'Oswald';
+}
+
+/* Add a class for the fixed header */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 117px;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+@media only screen and (max-width: 550px) {
+    .search-bar input[type="text"] {
+        width: 5vh;
+    }
+
+    .search-bar input[type="text"]::placeholder {
+        font-size: 14px;
+    }
+}
+
+/* Profile */
+.user-info {
+    color: whitesmoke;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-option,
+.logout-option {
+    text-align: center;
+}
+
+.profile-option a,
+.logout-option a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+}
+
+.profile-option a:hover,
+.logout-option a:hover {
+    background-color: rgb(125, 124, 121);
+    border-radius: 5px;
+}
+
+.profile-option,
+.logout-option {
+    margin-bottom: 20px;
+}
