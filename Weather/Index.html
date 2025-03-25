@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <script src="script.js"></script>
+    <title>Weather</title>
+    <style>.body {
+        margin: 0;
+        background-image: url('Forest.jpeg'); /* Corrected */
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: blur(0.3);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 400px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }</style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" class="search-bar" placeholder="Search for a city...">
+            <button class="search-button" onclick="searchWeather()"><img src="search.png" alt="search"></button>
+        </div>
+        <div class="weather-box">
+            <div class="location">Loading...</div>
+            <div class="temperature">Loading...</div>
+            <div class="weather">Loading...</div>
+        </div>
+    </div>
+</body>
+</html>
