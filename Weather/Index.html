@@ -3,35 +3,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="weather.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Weather</title>
-    <style>.body {
-        margin: 0;
-        background-image: url('Forest.jpeg'); /* Corrected */
-        background-size: cover;
-        background-repeat: no-repeat;
-        filter: blur(0.3);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .container{
-        width: 400px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-    }</style>
 </head>
 <body>
     <div class="container">
+        <h1>Weather Project</h1>
         <div class="search-box">
-            <input type="text" class="search-bar" placeholder="Search for a city...">
+            <input type="text" class="search-bar" placeholder="Search for a city..." oninput="fetchSuggestions(this.value)">
+            <div class="dropdown" id="suggestions"></div>
             <button class="search-button" onclick="searchWeather()"><img src="search.png" alt="search"></button>
         </div>
         <div class="weather-box">
